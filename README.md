@@ -46,7 +46,9 @@ an ExpandableTextView on Android platform which can shrink TextView height if it
 allprojects {
 		repositories {
 			...
-			maven { url "https://jitpack.io" }
+			maven { 
+			url "https://jitpack.io" 
+			}
 		}
 	}
 ##Add the dependency
