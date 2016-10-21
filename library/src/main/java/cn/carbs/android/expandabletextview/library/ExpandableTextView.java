@@ -52,7 +52,7 @@ public class ExpandableTextView extends TextView {
     private static final int TO_SHRINK_HINT_COLOR_BG_PRESSED = 0x55999999;
     private static final boolean TOGGLE_ENABLE = true;
     private static final boolean SHOW_TO_EXPAND_HINT = true;
-    private static final boolean SHOW_TO_SHRINK_HINT = false;
+    private static final boolean SHOW_TO_SHRINK_HINT = true;
     private static final boolean SHOW_NEW_LINE = true;
 
     private String mEllipsisHint;
