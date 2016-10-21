@@ -52,7 +52,7 @@ public class ExpandableTextView extends TextView {
     private static final int TO_SHRINK_HINT_COLOR_BG_PRESSED = 0x55999999;
     private static final boolean TOGGLE_ENABLE = true;
     private static final boolean SHOW_TO_EXPAND_HINT = true;
-    private static final boolean SHOW_TO_SHRINK_HINT = true;
+    private static final boolean SHOW_TO_SHRINK_HINT = false;
     private static final boolean SHOW_NEW_LINE = true;
 
     private String mEllipsisHint;
@@ -264,7 +264,7 @@ public class ExpandableTextView extends TextView {
                 int indexStart = getValidLayout().getLineStart(mMaxLinesOnShrink - 1);
                 int indexEndTrimmed = indexEnd
                         - getLengthOfString(mEllipsisHint)
-                        - (mShowToExpandHint ? getLengthOfString(mToExpandHint) + getLengthOfString(mGapToExpandHint) : 0);
+                        - (mShowToExpandHint ? getLengthOfString(mGapToExpandHint) : 0);//getLengthOfString(mToExpandHint) +
                 if (indexEndTrimmed <= 0) {
                     return mOrigText.subSequence(0, indexEnd);
                 }
@@ -272,7 +272,7 @@ public class ExpandableTextView extends TextView {
                 int remainWidth = getValidLayout().getWidth() -
                         (int) (mTextPaint.measureText(mOrigText.subSequence(indexStart, indexEndTrimmed).toString()) + 0.5);
                 float widthTailReplaced = mTextPaint.measureText(getContentOfString(mEllipsisHint)
-                        + (mShowToExpandHint ? (getContentOfString(mToExpandHint) + getContentOfString(mGapToExpandHint)) : ""));
+                        + (mShowToExpandHint ? (getContentOfString(mGapToExpandHint)) : ""));//getContentOfString(mToExpandHint) +
 
                 int indexEndTrimmedRevised = indexEndTrimmed;
                 if (remainWidth > widthTailReplaced) {

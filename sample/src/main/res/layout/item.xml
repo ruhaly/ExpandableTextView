@@ -11,7 +11,7 @@
         android:background="#22aaaaaa"
         android:padding="8dp"
         app:etv_EnableToggle="false"
-        app:etv_MaxLinesOnShrink="2" />
+        app:etv_MaxLinesOnShrink="6" />
 
     <View
         android:layout_width="match_parent"
